@@ -1,64 +1,133 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  Briefcase,
+  Cpu,
+  Megaphone,
+  DollarSign,
+} from "lucide-react";
 
 const agents = [
   {
-    emoji: "🧠",
     title: "CEO Agent",
-    description: "Creates business strategies and validates startup ideas."
+    role: "Business Strategy",
+    icon: Briefcase,
+    color: "from-green-500 to-emerald-400",
   },
   {
-    emoji: "💻",
     title: "CTO Agent",
-    description: "Designs software architecture and technical roadmap."
+    role: "System Architecture",
+    icon: Cpu,
+    color: "from-cyan-500 to-blue-500",
   },
   {
-    emoji: "📈",
     title: "Marketing Agent",
-    description: "Plans campaigns, branding and customer acquisition."
+    role: "Market Intelligence",
+    icon: Megaphone,
+    color: "from-pink-500 to-purple-500",
   },
   {
-    emoji: "💰",
     title: "Finance Agent",
-    description: "Creates budgets, forecasts and investment plans."
+    role: "Financial Planning",
+    icon: DollarSign,
+    color: "from-yellow-500 to-orange-400",
   },
 ];
 
 export default function AgentCards() {
   return (
-    <section className="mx-auto mt-24 max-w-7xl px-6 pb-24">
+    <section className="relative mx-auto max-w-7xl px-6 py-24">
+
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mb-12 text-center text-4xl font-bold"
+        className="mb-16 text-center text-5xl font-black text-white"
       >
-        Meet Your AI Team
+        Meet Your Autonomous AI Team
       </motion.h2>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {agents.map((agent, index) => (
-          <motion.div
-            key={agent.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ y: -8 }}
-            className="rounded-3xl border bg-white/80 p-6 shadow-xl backdrop-blur"
-          >
-            <div className="text-5xl">{agent.emoji}</div>
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
-            <h3 className="mt-5 text-2xl font-bold">
-              {agent.title}
-            </h3>
+        {agents.map((agent, index) => {
 
-            <p className="mt-4 text-gray-600">
-              {agent.description}
-            </p>
-          </motion.div>
-        ))}
+          const Icon = agent.icon;
+
+          return (
+
+            <motion.div
+              key={agent.title}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.15 }}
+              whileHover={{
+                y: -12,
+                scale: 1.03,
+              }}
+              className="group relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-[#0f172a]/70 p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(59,130,246,.12)]"
+            >
+
+              <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-cyan-500/10 blur-3xl transition group-hover:bg-cyan-500/20" />
+
+              <div
+                className={`flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br ${agent.color} shadow-lg`}
+              >
+
+                <Icon size={36} className="text-white" />
+
+              </div>
+
+              <h3 className="mt-8 text-2xl font-bold text-white">
+
+                {agent.title}
+
+              </h3>
+
+              <p className="mt-2 text-cyan-300">
+
+                {agent.role}
+
+              </p>
+
+              <div className="mt-8 flex items-center justify-between">
+
+                <span className="text-green-400 text-sm font-semibold">
+
+                  ● ONLINE
+
+                </span>
+
+                <span className="text-gray-400 text-sm">
+
+                  AI Ready
+
+                </span>
+
+              </div>
+
+              <div className="mt-5 h-2 overflow-hidden rounded-full bg-white/10">
+
+                <motion.div
+                  animate={{
+                    width: ["40%", "100%", "70%", "100%"],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 3,
+                  }}
+                  className={`h-full rounded-full bg-gradient-to-r ${agent.color}`}
+                />
+
+              </div>
+
+            </motion.div>
+
+          );
+
+        })}
+
       </div>
+
     </section>
   );
 }

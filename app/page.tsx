@@ -2,23 +2,32 @@ import MissionOS from "@/components/MissionOS";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-100">
+    <main className="min-h-screen overflow-hidden bg-[#020817]">
 
-      <div className="absolute -top-32 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-400/20 blur-3xl" />
+      {/* Background Glow */}
 
-      <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-8 py-6">
+      <div className="fixed inset-0 -z-10">
 
-        <h1 className="text-2xl font-bold">
-          🚀 MissionOS
-        </h1>
+        <div className="absolute left-1/2 top-32 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-blue-600/20 blur-[180px]" />
 
-        <div className="hidden gap-8 md:flex">
-          <a href="#">Features</a>
-          <a href="#">Agents</a>
-          <a href="#">About</a>
-        </div>
+        <div className="absolute right-0 top-0 h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-[160px]" />
 
-      </nav>
+        <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-[160px]" />
+
+      </div>
+
+      {/* Grid */}
+
+      <div
+        className="fixed inset-0 -z-10 opacity-20"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(59,130,246,.10) 1px,transparent 1px),
+            linear-gradient(90deg,rgba(59,130,246,.10) 1px,transparent 1px)
+          `,
+          backgroundSize: "40px 40px",
+        }}
+      />
 
       <MissionOS />
 
