@@ -11,5 +11,5 @@ frontend/dist/
 # Mac
 .DS_Store
 
-# VSCode
+# VS Code
 .vscode/
