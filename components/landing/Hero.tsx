@@ -1,10 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
+import { useState } from "react";
 import { Cpu, Bot, Rocket } from "lucide-react";
 
-export default function Hero() {
+export default function Hero({
+   onLaunch,
+}: {
+  onLaunch: () => void;
+}) {
+  const [idea, setIdea] = useState("");
   return (
     <section className="relative overflow-hidden bg-[#020817] text-white">
 
@@ -33,35 +38,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Floating Particles */}
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-        {[...Array(35)].map((_, i) => (
-
-          <motion.div
-            key={i}
-            className="absolute h-1.5 w-1.5 rounded-full bg-cyan-400"
-            initial={{
-              x: Math.random() * 1600,
-              y: Math.random() * 900,
-              opacity: 0.2,
-            }}
-            animate={{
-              y: -250,
-              opacity: [0.2, 1, 0.2],
-            }}
-            transition={{
-              duration: 8 + Math.random() * 8,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "linear",
-            }}
-          />
-
-        ))}
-
-      </div>
+      
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 text-center">
 
@@ -108,34 +85,34 @@ export default function Hero() {
         </motion.p>
 
         {/* AI Prompt */}
-
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="mt-14 w-full max-w-4xl rounded-3xl border border-cyan-400/30 bg-slate-900/60 p-3 backdrop-blur-xl shadow-[0_0_70px_rgba(59,130,246,.35)]"
-        >
-          <div className="flex-1 rounded-2xl bg-slate-950/70 px-6 py-5 text-left text-lg text-cyan-300">
+  initial={{ opacity: 0, y: 35 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.8 }}
+  className="mt-14 w-full max-w-5xl rounded-3xl border border-cyan-400/30 bg-slate-900/60 p-4 backdrop-blur-xl shadow-[0_0_70px_rgba(59,130,246,.35)]"
+>
 
-            <Typewriter
-              words={[
-                "Build an AI Healthcare Startup...",
-                "Create a FinTech Platform...",
-                "Generate an EdTech SaaS...",
-                "Design an Agriculture AI Startup...",
-                "Launch a Cybersecurity Company..."
-              ]}
-              loop={0}
-              cursor
-              cursorStyle="▋"
-              typeSpeed={60}
-              deleteSpeed={30}
-              delaySpeed={1500}
-            />
+  <div className="flex flex-col gap-4 md:flex-row">
 
-          </div>
+    <input
+      value={idea}
+      onChange={(e) => setIdea(e.target.value)}
+      placeholder="Describe your startup idea..."
+      className="flex-1 rounded-2xl bg-slate-950/80 px-6 py-5 text-lg text-cyan-300 outline-none"
+    />
 
-        </motion.div>
+    <button
+      onClick={onLaunch}
+      className="rounded-2xl bg-cyan-500 px-8 py-5 font-bold text-slate-950 transition hover:scale-105"
+    >
+      Launch Mission 🚀
+    </button>
+
+  </div>
+
+</motion.div>
+
+       
                 {/* AI Agents */}
 
         <div className="mt-16 grid w-full max-w-5xl gap-5 md:grid-cols-4">
