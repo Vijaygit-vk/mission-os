@@ -13,7 +13,9 @@ app = FastAPI(
 # Allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Change to your frontend URL later
+    allow_origins=[
+        "https://mission-mnoq1njhp-vikxx79s-projects.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
