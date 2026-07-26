@@ -1,36 +1,223 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 MissionOS
 
-## Getting Started
+> **AI-Powered Startup Co-Founder**
+> Transform your startup idea into an investor-ready business plan in seconds.
 
-First, run the development server:
+![MissionOS Banner](https://img.shields.io/badge/AI-Startup%20Planner-blue)
+![React](https://img.shields.io/badge/Frontend-React-61DAFB)
+![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688)
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB)
+![OpenRouter](https://img.shields.io/badge/LLM-OpenRouter-orange)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 📌 Overview
+
+MissionOS is an AI-powered platform that helps entrepreneurs, students, and innovators convert startup ideas into comprehensive business plans.
+
+Simply enter your startup idea, and MissionOS generates:
+
+- 📄 Executive Summary
+- 🎯 Problem Statement
+- 💡 Solution
+- ⚙️ Key Features
+- 💻 Tech Stack
+- 💰 Revenue Model
+- 📈 Go-To-Market Strategy
+- 🗓️ 30-60-90 Day Roadmap
+- ⚠️ Risks
+- 🎤 Elevator Pitch
+
+The goal is to reduce the time required for startup planning from hours to just a few seconds.
+
+---
+
+# ✨ Features
+
+- 🤖 AI-powered startup planning
+- ⚡ Instant business strategy generation
+- 📊 Professional startup documentation
+- 🎯 Investor-ready output
+- 🖥️ Modern and responsive UI
+- 🌐 Deployed on Vercel & Render
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+- React
+- Vite
+- Axios
+- React Markdown
+
+## Backend
+- FastAPI
+- Python
+- Uvicorn
+
+## AI
+- OpenRouter API
+- Llama 3.3 70B
+
+## Deployment
+- Vercel (Frontend)
+- Render (Backend)
+
+---
+
+# 🏗 Architecture
+
+```
+          User
+            │
+            ▼
+     React + Vite
+            │
+         Axios API
+            │
+            ▼
+       FastAPI Server
+            │
+      OpenRouter API
+            │
+            ▼
+      Llama 3.3 70B
+            │
+            ▼
+   Generated Startup Plan
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+mission-os/
+│
+├── backend/
+│   ├── app/
+│   ├── requirements.txt
+│   └── main.py
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+# 🚀 Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Clone Repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/Vijaygit-vk/mission-os.git
 
-## Deploy on Vercel
+cd mission-os
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Backend Setup
+
+```bash
+cd backend
+
+python3 -m venv venv
+
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload
+```
+
+Backend runs on:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend runs on:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env` file inside the backend directory.
+
+```env
+OPENROUTER_API_KEY=YOUR_OPENROUTER_API_KEY
+```
+
+---
+
+# 🌍 Live Demo
+
+### Frontend
+
+https://mission-mnoq1njhp-vikxx79s-projects.vercel.app/
+
+### Backend API
+
+https://mission-os-8ksa.onrender.com/docs
+
+---
+
+# 🔮 Future Scope
+
+- AI Pitch Deck Generator
+- Financial Forecasting
+- Competitor Analysis
+- Business Model Canvas
+- Market Research
+- Investor Recommendation System
+- AI Startup Mentor
+- PDF Export
+- Team Matching
+
+---
+
+# 👨‍💻 Authors
+
+**Vijayakarthikeyan**
+Electronics & Communication Engineering
+
+**Nidhi**
+Electronics & Communication Engineering
+
+Saranathan College of Engineering
+
+GitHub:
+https://github.com/Vijaygit-vk
+
+---
+
+# 📜 License
+
+This project is developed for educational purposes and hackathon participation.
+
+---
+
+## ⭐ If you like this project, don't forget to give it a star!
